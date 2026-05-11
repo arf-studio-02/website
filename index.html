@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Arf.Store</title>
+
+<!-- GLOBAL CSS -->
+<link rel="stylesheet"
+href="css/base.css">
+
+<!-- PAGE CSS -->
+<link rel="stylesheet"
+href="css/home.css">
+<link rel="stylesheet"
+href="css/top-bar.css">
+
+
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div id="topbar"></div>
+
+<!-- HERO -->
+<section class="hero">
+
+    <h2 data-home="heroTitle">
+    Build Your Website Easily
+    </h2>
+
+    <p data-home="heroDesc">
+    Modern website for your business
+    </p>
+
+</section>
+
+<!-- PRODUCT -->
+<section class="products">
+
+    <div class="card">
+
+        <h3 data-home="productTitle">
+          Website Basic
+        </h3>
+
+        <p data-home="productDesc">
+          Simple landing page
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- LOAD COMPONENT -->
+<!-- LOAD COMPONENT -->
+<script>
+
+Promise.all([
+
+    fetch("components/top-bar.html")
+    .then(res => res.text()),
+
+    fetch("components/footer.html")
+    .then(res => res.text())
+
+]).then(([topbar, footer]) => {
+
+    document.getElementById("topbar")
+    .innerHTML = topbar;
+
+    document.getElementById("footer")
+    .innerHTML = footer;
+
+    /* INIT */
+
+    initTopbar();
+
+    applyLanguage();
+
+    applyHomeLanguage();
+
+});
+
+</script>
+
+<!-- GLOBAL -->
+<script src="js/language.js"></script>
+
+<!-- PAGE -->
+<script src="js/home-language.js"></script>
+
+<!-- COMPONENT -->
+<script src="js/top-bar.js"></script>
+<script src="js/footer.js"></script>
+
+<!-- MAIN -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
