@@ -374,3 +374,61 @@ document.addEventListener("DOMContentLoaded", () => {
     initTopbar();
 
 });
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+/* FIREBASE */
+const firebaseConfig = {
+  apiKey: "AIzaSyDmmoT6x0LfC5Q6xV-ETZlSgRNan-UZhSs",
+  authDomain: "lunera-577d3.firebaseapp.com",
+  projectId: "lunera-577d3",
+  appId: "1:573808383337:web:aee7ec85bc6777a64019f8"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+console.log("🔥 topbar.js loaded");
+
+/* =========================
+   LOGIN
+========================= */
+document.addEventListener("click", (e) => {
+  if (e.target.closest("#loginBtn")) {
+    signInWithPopup(auth, provider);
+  }
+
+  if (e.target.closest("#logoutBtn")) {
+    signOut(auth);
+  }
+});
+
+/* =========================
+   AUTH STATE
+========================= */
+onAuthStateChanged(auth, (user) => {
+  const loginBtn = document.getElementById("loginBtn");
+  const userMenu = document.getElementById("userMenu");
+  const userName = document.getElementById("userName");
+
+  if (!loginBtn || !userMenu) return;
+
+  if (user) {
+    loginBtn.classList.add("hidden");
+    userMenu.classList.remove("hidden");
+
+    userName.innerText = `Hi, ${user.displayName}`;
+  } else {
+    loginBtn.classList.remove("hidden");
+    userMenu.classList.add("hidden");
+
+    userName.innerText = "";
+  }
+});
