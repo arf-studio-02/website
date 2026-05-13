@@ -613,7 +613,38 @@ body.no-scroll {
     transform: translateY(-2px);
     box-shadow: 0 12px 24px rgba(56,189,248,0.35);
 }
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
+.hidden {
+  display: none !important;
+}
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-text {
+    padding: 11px 22px;
+    border-radius: 16px;
+    background: rgb(255, 255, 255);
+    color: #08111f;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: .35s;
+}
+.user-text:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(56,189,248,0.35);
+    cursor: default;
+}
 /* CART */
 
 .cart{
