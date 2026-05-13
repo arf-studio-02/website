@@ -120,12 +120,21 @@ data-lang="es">
 </div>
             </div>
 
-            <!-- LOGIN -->
-<button class="btn-login" id="loginBtn"
-     data-translate="LOGIN">
-     Login / Register
-</button>
-            <!-- CART -->
+
+  <!-- LOGIN STATE -->
+<div class="user-area">
+
+  <!-- LOGIN -->
+  <button id="loginBtn" class="btn-login">
+    Login / Register
+  </button>
+
+  <!-- LOGGED IN TEXT ONLY -->
+  <div id="userMenu" class="user-text hidden">
+    <span id="userName"></span>
+  </div>
+
+</div>    <!-- CART -->
             <div class="cart">
 
                 <i class="fa-solid fa-bag-shopping"></i>
@@ -145,32 +154,3 @@ data-lang="es">
     </div>
 
 </header>
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-  import { getAuth, signInWithPopup, GoogleAuthProvider }
-  from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyDmmoT6x0LfC5Q6xV-ETZlSgRNan-UZhSs",
-    authDomain: "lunera-577d3.firebaseapp.com",
-    projectId: "lunera-577d3",
-    appId: "1:573808383337:web:aee7ec85bc6777a64019f8"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
-
-  // ✅ LANGSUNG EVENT LISTENER (BENAR)
-  document.getElementById("loginBtn").addEventListener("click", () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        alert("Halo " + user.displayName);
-      })
-      .catch((error) => {
-        console.log("Login error:", error);
-      });
-  });
-</script>
