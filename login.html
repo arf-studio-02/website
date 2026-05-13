@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LUNÉRA Login</title>
+</head>
+<body>
+
+  <h2>Login LUNÉRA</h2>
+
+  <button onclick="loginGoogle()">Login with Google</button>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import {
+      getAuth,
+      signInWithPopup,
+      GoogleAuthProvider
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    // CONFIG FIREBASE
+    const firebaseConfig = {
+      apiKey: "AIzaSyDmmoT6x0LfC5Q6xV-ETZlSgRNan-UZhSs",
+      authDomain: "lunera-577d3.firebaseapp.com",
+      projectId: "lunera-577d3",
+      appId: "1:573808383337:web:aee7ec85bc6777a64019f8"
+    };
+
+    // INIT FIREBASE
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    // LOGIN FUNCTION
+    window.loginGoogle = function () {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          const user = result.user;
+
+          console.log("LOGIN SUCCESS");
+          console.log("Nama:", user.displayName);
+          console.log("Email:", user.email);
+          console.log("Foto:", user.photoURL);
+
+          alert("Halo " + user.displayName);
+        })
+        .catch((error) => {
+          console.log("Error login:", error);
+        });
+    };
+  </script>
+
+</body>
+</html>

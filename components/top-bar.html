@@ -1,0 +1,176 @@
+<header class="topbar">
+
+    <div class="topbar-container">
+
+        <!-- LOGO -->
+        <a href="../index.html" class="logo">
+          LUNÉRA
+        </a>
+
+      <nav class="menu" id="menu">
+
+    <a href="#"
+       class="mega-btn"
+       data-target="mega-wanita"
+       data-translate="WOMEN">
+                WOMEN
+        
+    </a>
+
+    <a href="../products.html"
+       data-translate="MAN">
+        MAN
+    </a>
+
+    <a href="#"
+       data-translate="CHILDREN">
+        CHILDREN
+    </a>
+
+    <a href="#"
+       data-translate="SPORT">
+        SPORT
+    </a>
+
+    <a href="#"
+       data-translate="MUSLIM">
+        MUSLIM
+    </a>
+
+</nav>
+<!-- MEGA COMPONENT -->
+<div id="mega-wanita-container"></div>
+        <!-- RIGHT -->
+        <div class="topbar-right">
+
+            <!-- SEARCH -->
+            <div class="search-box">
+               
+                <input
+                type="text"
+                placeholder="Search..."
+                data-placeholder="SEARCH">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <!-- LANGUAGE -->
+            <div class="lang-dropdown">
+
+                <button class="lang-toggle"
+                id="langToggle">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    <span id="currentLang">
+                        ID
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+              <!-- MENU -->
+<div class="lang-menu"
+id="langMenu">
+
+    <button class="lang-option active"
+    data-lang="id">
+        🇮🇩 Indonesia
+    </button>
+
+    <button class="lang-option"
+    data-lang="en">
+        🇺🇸 English
+    </button>
+
+    <button class="lang-option"
+    data-lang="jp">
+        🇯🇵 Jepang
+    </button>
+
+    <button class="lang-option"
+    data-lang="kr">
+        🇰🇷 Korea
+    </button>
+
+    <button class="lang-option"
+    data-lang="cn">
+        🇨🇳 China
+    </button>
+
+<button class="lang-option"
+data-lang="ar">
+    🇸🇦 Arabic
+</button>
+
+<button class="lang-option"
+data-lang="fr">
+    🇫🇷 French
+</button>
+
+<button class="lang-option"
+data-lang="de">
+    🇩🇪 German
+</button>
+
+<button class="lang-option"
+data-lang="es">
+    🇪🇸 Spanish
+</button>
+</div>
+            </div>
+
+            <!-- LOGIN -->
+<button class="btn-login" id="loginBtn"
+     data-translate="LOGIN">
+     Login / Register
+</button>
+            <!-- CART -->
+            <div class="cart">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+            </div>
+
+            <!-- HAMBURGER -->
+            <div class="hamburger"
+            id="hamburger">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider }
+  from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDmmoT6x0LfC5Q6xV-ETZlSgRNan-UZhSs",
+    authDomain: "lunera-577d3.firebaseapp.com",
+    projectId: "lunera-577d3",
+    appId: "1:573808383337:web:aee7ec85bc6777a64019f8"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  // ✅ LANGSUNG EVENT LISTENER (BENAR)
+  document.getElementById("loginBtn").addEventListener("click", () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        alert("Halo " + user.displayName);
+      })
+      .catch((error) => {
+        console.log("Login error:", error);
+      });
+  });
+</script>

@@ -1,0 +1,102 @@
+/* =========================
+   PRODUCTS PAGE
+========================= */
+
+.products-page{
+    min-height:100vh;
+    padding:120px 8% 80px;
+    background:#0f172a;
+    color:white;
+    font-family:'Poppins',sans-serif;
+}
+
+/* HEADER */
+
+.products-header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.products-header h1{
+    font-size:42px;
+    margin-bottom:14px;
+}
+
+.products-header p{
+    color:#cbd5e1;
+    font-size:16px;
+}
+
+/* GRID */
+
+.products-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* CARD */
+
+.product-card{
+    background:#1e293b;
+    border-radius:24px;
+    padding:35px;
+    transition:.3s;
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+}
+
+/* ICON */
+
+.product-icon{
+    width:70px;
+    height:70px;
+    border-radius:18px;
+    background:#38bdf8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:24px;
+}
+
+.product-icon i{
+    font-size:28px;
+    color:black;
+}
+
+/* TITLE */
+
+.product-card h2{
+    font-size:24px;
+    margin-bottom:14px;
+}
+
+/* DESC */
+
+.product-card p{
+    color:#cbd5e1;
+    line-height:1.7;
+    margin-bottom:24px;
+}
+
+/* BUTTON */
+
+.buy-btn{
+    border:none;
+    padding:12px 22px;
+    border-radius:14px;
+    background:#38bdf8;
+    color:black;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    transform:scale(1.05);
+}

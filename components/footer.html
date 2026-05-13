@@ -1,0 +1,285 @@
+<!-- FOOTER START -->
+<style>
+.footer {
+  width: 100%;
+  overflow-x: hidden;
+  background: #000000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CONTAINER */
+.footer-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin-left: 0;   /* 🔥 penting */
+  margin-right: auto;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+
+  gap: 50px;
+
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BRAND SECTION
+========================= */
+
+.footer-col.brand h2 {
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.brand-desc {
+  opacity: 0.7;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+/* COMPLAINT*/
+.complaint-service {
+  margin-top: 20px;
+}
+
+/* TITLE */
+.complaint-service h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.footer-brand {
+  text-align: left;
+  font-size: 16px;
+  margin: 8px 0 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* TEXT */
+.row {
+  display: flex;
+  justify-content: space-between; /* kunci sejajar kiri-kanan */
+  align-items: center;
+  gap: 0px;
+  line-height: 0.2;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  opacity: 0.7;
+  min-width: 140px;
+  font-size: 14px;
+  
+}
+
+.value {
+  
+  flex: 1;
+}
+.value a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.value a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+/* =========================
+   LINKS SECTION
+========================= */
+
+.footer-col h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.footer-col a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.7;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* =========================
+   SOCIAL BOTTOM
+========================= */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.social-title {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 18px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  color: #60a5fa;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-col.brand h2 {
+    font-size: 24px;
+  }
+}
+</style>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- =========================
+         COLUMN 1 - BRAND
+    ========================== -->
+    <div class="footer-col brand">
+      <h2>LUNÉRA</h2>
+
+      <p class="brand-desc">
+        LUNÉRA is a modern fashion catalog focused on timeless aesthetics,
+        clean silhouettes, and contemporary street elegance.
+      </p>
+
+      <div class="complaint-service">
+
+  <h4>Layanan Pengaduan Konsumen</h4>
+  <h3 class="footer-brand">LUNÉRA</h3>
+
+    <div class="row">
+      <div class="label">Email</div>
+     <div class="value">
+  <a href="mailto:support@arfstore.com">support@arfstore.com</a>
+</div>
+    </div>
+
+    <div class="row">
+      <div class="label">WhatsApp</div>
+      <div class="value">
+  <a href="tel:+6281234567890">+62 812-3456-7890</a>
+</div>
+    </div>
+
+    <div class="row">
+      <div class="label">Jam Operasional</div>
+      <div class="value">09:00 - 21:00 WIB</div>
+    </div>
+
+    <div class="row">
+      <div class="label">Respon</div>
+      <div class="value">1x24 jam</div>
+    </div>
+
+</div>
+</div>
+    <!-- =========================
+         COLUMN 2 - LAYANAN
+    ========================== -->
+    <div class="footer-col">
+      <h3>Layanan</h3>
+
+      <a href="#">Bantuan</a>
+      <a href="#">Cara Pengembalian</a>
+      <a href="#">Product Index</a>
+      <a href="#">Promo Partner Kami</a>
+      <a href="#">Konfirmasi Transfer</a>
+      <a href="#">Hubungi Kami</a>
+      <a href="#">Cara Berjualan</a>
+      <a href="#">Pengembalian Ongkir</a>
+      <a href="#">Status Order</a>
+      <a href="#">Brand di Zalora</a>
+    </div>
+
+    <!-- =========================
+         COLUMN 3 - TENTANG
+    ========================== -->
+    <div class="footer-col">
+      <h3>Tentang Kami</h3>
+
+      <a href="#">About Us</a>
+      <a href="#">Promosikan Brand Anda</a>
+      <a href="#">Pers/Media</a>
+      <a href="#">Karir</a>
+      <a href="#">Persyaratan & Ketentuan</a>
+      <a href="#">Kebijakan Privasi</a>
+      <a href="#">Responsible Disclosure</a>
+      <a href="#">Influencer Program</a>
+      <a href="#">ZALORA THREAD</a>
+    </div>
+
+  </div>
+
+  <!-- =========================
+       BOTTOM SOCIAL
+  ========================== -->
+  <div class="footer-bottom">
+
+    <div class="social-title">Temukan kami</div>
+
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+    <p id="copyright"></p>
+  </div>
+</footer>
+
+<!-- FOOTER END -->

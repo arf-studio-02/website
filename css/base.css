@@ -1,0 +1,28 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ROOT COLOR */
+:root {
+  --primary: #6c63ff;
+  --dark: #0f172a;
+  --light: #f8fafc;
+  --text: #1e293b;
+}
+
+/* BODY */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--light);
+  color: var(--text);
+}
+
+/* GLOBAL CONTAINER */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
